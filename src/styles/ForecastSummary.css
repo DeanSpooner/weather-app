@@ -1,3 +1,98 @@
-.weather-app {
-  margin: 0 20px;
+.forecast-summary {
+  border: solid rgba(0, 0, 0, 0);
+  border-width: 2px 0;
+  border-image: linear-gradient(
+    90deg,
+    #a280ff 0%,
+    #ef89ff 25%,
+    #ff7aca 50%,
+    #ff67bb 75%,
+    #ff5d96 100%
+  );
+  border-image-slice: 1;
+  font-size: 7vw;
+  line-height: 3rem;
+  padding: 0 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.forecast-summary__icon {
+  margin-top: 0.2em;
+  font-size: 4em;
+}
+
+.forecase-summary__button {
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    270deg,
+    #a280ff 0%,
+    #ef89ff 25%,
+    #ff7aca 50%,
+    #ff67bb 75%,
+    #ff5d96 100%
+  );
+  background-size: 400% 400%;
+  font-family: "Poppins";
+  height: 50px;
+  width: 50px;
+  animation: gradscroll 15s ease infinite;
+  -webkit-animation: gradscroll 15s ease infinite;
+  -moz-animation: gradscroll 15s ease infinite;
+}
+
+.forecase-summary__button:hover {
+  animation: gradscroll 1s ease infinite;
+  -webkit-animation: gradscroll 1s ease infinite;
+  -moz-animation: gradscroll 1s ease infinite;
+}
+
+.forecast-summary:nth-of-type(1) {
+  border-top: 0;
+}
+.forecast-summary:nth-of-type(5) {
+  border-bottom: 0;
+}
+
+.forecast-summary:hover {
+  animation: forecast-highlight 4s ease infinite;
+  -webkit-animation: forecast-highlight 4s ease infinite;
+  -moz-animation: forecast-highlight 4s ease infinite;
+}
+
+@media screen and (min-width: 600px) {
+  .forecast-summary {
+    border-width: 0 0 0 2px;
+    font-size: 2vw;
+    line-height: 1em;
+    margin-top: 1rem;
+  }
+
+  .forecast-summary:nth-of-type(1) {
+    border-left: 0;
+  }
+  .forecast-summary:nth-of-type(5) {
+    border-right: 0;
+  }
+}
+
+.forecast-summary:nth-of-type(1) {
+  animation: fadein 0.6s;
+}
+
+.forecast-summary:nth-of-type(2) {
+  animation: fadein 1.2s;
+}
+
+.forecast-summary:nth-of-type(3) {
+  animation: fadein 1.8s;
+}
+
+.forecast-summary:nth-of-type(4) {
+  animation: fadein 2.4s;
+}
+
+.forecast-summary:nth-of-type(5) {
+  animation: fadein 3s;
 }

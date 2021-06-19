@@ -1,0 +1,46 @@
+.search-form {
+  text-align: center;
+}
+
+.search-form__button {
+  border: 0;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    90deg,
+    #a280ff 0%,
+    #ef89ff 25%,
+    #ff7aca 50%,
+    #ff67bb 75%,
+    #ff5d96 100%
+  );
+  background-size: 400% 400%;
+  margin-left: 1rem;
+  height: 35px;
+  width: 35px;
+  align-items: center;
+  animation: gradscroll 5s linear infinite;
+}
+
+.search-form__button:hover {
+  animation: gradscroll 1s ease infinite;
+  -webkit-animation: gradscroll 1s ease infinite;
+  -moz-animation: gradscroll 1s ease infinite;
+}
+
+.search-form__input {
+  border: 0;
+  border-radius: 12%;
+  font-family: "Poppins";
+  height: 30px;
+  text-align: center;
+}
+
+img {
+  height: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .forecast-summaries {
+    flex-direction: row;
+  }
+}

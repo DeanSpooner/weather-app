@@ -3,6 +3,7 @@ import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 import SearchForm from "./SearchForm";
+import Credits from "./Credits";
 import getForecast from "../requests/getForecast";
 import "../styles/App.css";
 
@@ -61,6 +62,7 @@ const App = () => {
           {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
         </>
       )}
+      <Credits />
     </div>
   );
 };
