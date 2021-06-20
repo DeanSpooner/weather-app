@@ -3,12 +3,31 @@ import PropTypes from "prop-types";
 import WeatherIcon from "react-icons-weather";
 import "../styles/ForecastDetails.css";
 import moment from "moment";
+import clouds from "../images/cloud.png";
+import sun from "../images/sun.png";
 
 const ForecastDetails = ({ forecast }) => {
-  const { date, temperature, humidity, wind } = forecast;
+  const { date, temperature, humidity, wind, description } = forecast;
 
+  let background;
+
+  if (
+    description.includes("Cloud") ||
+    description.includes("Rain") ||
+    description.includes("Storm") ||
+    description.includes("Snow") ||
+    description.includes("Haz")
+  ) {
+    background = clouds;
+  } else {
+    background = sun;
+  }
   return (
-    <div className="forecast-details" data-testid="forecast-details">
+    <div
+      className="forecast-details"
+      data-testid="forecast-details"
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <div className="forecast-details__date">
         {moment(date).format("dddd Do MMMM yyyy")}
       </div>
@@ -31,6 +50,7 @@ export default ForecastDetails;
 
 ForecastDetails.propTypes = {
   forecast: PropTypes.shape({
+    description: PropTypes.string.isRequired,
     date: PropTypes.number.isRequired,
     humidity: PropTypes.number.isRequired,
     temperature: PropTypes.shape({
