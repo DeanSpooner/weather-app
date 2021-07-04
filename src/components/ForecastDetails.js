@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import WeatherIcon from "react-icons-weather";
 import "../styles/ForecastDetails.css";
@@ -10,6 +10,43 @@ const ForecastDetails = ({ forecast }) => {
   const { date, temperature, humidity, wind, description } = forecast;
 
   let background;
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    if (description.includes(`Rain`)) {
+      document.body.style.backgroundImage = `linear-gradient(
+      330deg,
+      #315b73 0%,
+      #247aab 25%,
+      #547bf0 50%,
+      #5c6b96 75%,
+      #8a9cd1 100%)`;
+    } else if (description.includes(`Cloud`) || description.includes(`Snow`)) {
+      document.body.style.backgroundImage = `linear-gradient(
+      330deg,
+      #2e2e2e 0%,
+      #949381 25%,
+      #707070 50%,
+      #9c9b95 75%,
+      #525252 100%)`;
+    } else if (description.includes(`Storm`) || description.includes(`Haz`)) {
+      document.body.style.backgroundImage = `linear-gradient(
+      330deg,
+      #4c4f54 0%,
+      #4e5157 25%,
+      #424345 50%,
+      #2e2e2e 75%,
+      #4a4943 100%)`;
+    } else {
+      document.body.style.backgroundImage = `linear-gradient(
+        330deg,
+        #b2e1fa 0%,
+        #ded11b 25%,
+        #58b6e9 50%,
+        #0e8dd2 75%,
+        #2073d8 100%)`;
+    }
+  }, [description]);
 
   if (
     description.includes("Cloud") ||

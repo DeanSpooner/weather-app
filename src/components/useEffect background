@@ -1,0 +1,18 @@
+useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    selectedForecast.description === `Rain`
+      ? (document.body.style.backgroundImage = `linear-gradient(
+      330deg,
+      #ff0000 0%,
+      #00ff00 25%,
+      #0000ff 50%,
+      #ffffff 75%,
+      #000000 100%)`)
+      : (document.body.style.backgroundImage = `linear-gradient(
+      330deg,
+      #b2e1fa 0%,
+      #83ccf4 25%,
+      #58b6e9 50%,
+      #0e8dd2 75%,
+      #2073d8 100%)`);
+  }, [selectedForecast.description]);
