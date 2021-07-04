@@ -1,6 +1,12 @@
-# Weather App by Dean Spooner - now live [here](https://deanspooner.github.io/weather-app)! ⛈
+# Weather App v1.1 by Dean Spooner - now live [here](https://deanspooner.github.io/weather-app)! ⛈
 
 This is a project that shows the weather forecast for a given place in the UK, using real, live data from APIs. This app makes use of React.
+
+## Latest Updates
+
+- v1.1: Now renders different backgrounds depending on the forecast of the selected day;
+
+- v1.0: Fully working weather app that provides live forecast data for UK locations for the next five days.
 
 ## Objectives
 
